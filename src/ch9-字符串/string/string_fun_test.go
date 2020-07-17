@@ -7,7 +7,8 @@ import (
 )
 
 func TestStringFun(t *testing.T) {
-	s := "A,B,C"
+	var s string
+	s = "A,B,C"
 	parts := strings.Split(s, ",")
 	for _, part := range parts {
 		t.Log(part)
