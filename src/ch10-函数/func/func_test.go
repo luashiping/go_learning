@@ -35,3 +35,31 @@ func TestFn(t *testing.T) {
 	ret := timeSpent(slowFun)(10)
 	t.Log(ret)
 }
+
+func Sum(ops ...int) int {
+	ret := 0
+	for _, op := range ops {
+		ret += op
+	}
+
+	return ret
+}
+func TestVarParam(t *testing.T) {
+	ret := Sum(1, 2, 3, 4)
+	t.Log(ret)
+
+	ret1 := Sum(1, 2, 3, 4, 5)
+	t.Log(ret1)
+
+}
+
+func Clear() {
+	fmt.Println("clear resources.....")
+}
+
+func TestDefer(t *testing.T) {
+	defer Clear()
+	fmt.Println("start")
+	panic("err")
+	// fmt.Println("End")
+}
