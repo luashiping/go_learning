@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson6a975c40DecodeCh41(in *jlexer.Lexer, out *Response) {
+func easyjson6a975c40DecodeCh41PerformanceExample(in *jlexer.Lexer, out *Response) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -50,7 +50,7 @@ func easyjson6a975c40DecodeCh41(in *jlexer.Lexer, out *Response) {
 		in.Consumed()
 	}
 }
-func easyjson6a975c40EncodeCh41(out *jwriter.Writer, in Response) {
+func easyjson6a975c40EncodeCh41PerformanceExample(out *jwriter.Writer, in Response) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -70,27 +70,27 @@ func easyjson6a975c40EncodeCh41(out *jwriter.Writer, in Response) {
 // MarshalJSON supports json.Marshaler interface
 func (v Response) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6a975c40EncodeCh41(&w, v)
+	easyjson6a975c40EncodeCh41PerformanceExample(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Response) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6a975c40EncodeCh41(w, v)
+	easyjson6a975c40EncodeCh41PerformanceExample(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Response) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6a975c40DecodeCh41(&r, v)
+	easyjson6a975c40DecodeCh41PerformanceExample(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Response) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6a975c40DecodeCh41(l, v)
+	easyjson6a975c40DecodeCh41PerformanceExample(l, v)
 }
-func easyjson6a975c40DecodeCh411(in *jlexer.Lexer, out *Request) {
+func easyjson6a975c40DecodeCh41PerformanceExample1(in *jlexer.Lexer, out *Request) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -144,7 +144,7 @@ func easyjson6a975c40DecodeCh411(in *jlexer.Lexer, out *Request) {
 		in.Consumed()
 	}
 }
-func easyjson6a975c40EncodeCh411(out *jwriter.Writer, in Request) {
+func easyjson6a975c40EncodeCh41PerformanceExample1(out *jwriter.Writer, in Request) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -175,23 +175,23 @@ func easyjson6a975c40EncodeCh411(out *jwriter.Writer, in Request) {
 // MarshalJSON supports json.Marshaler interface
 func (v Request) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson6a975c40EncodeCh411(&w, v)
+	easyjson6a975c40EncodeCh41PerformanceExample1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Request) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson6a975c40EncodeCh411(w, v)
+	easyjson6a975c40EncodeCh41PerformanceExample1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Request) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson6a975c40DecodeCh411(&r, v)
+	easyjson6a975c40DecodeCh41PerformanceExample1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Request) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson6a975c40DecodeCh411(l, v)
+	easyjson6a975c40DecodeCh41PerformanceExample1(l, v)
 }
