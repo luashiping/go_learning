@@ -1,2 +1,4 @@
 *.prof
 *.test
+pkg/
+.DS_Store
