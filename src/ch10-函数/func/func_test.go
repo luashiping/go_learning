@@ -63,3 +63,19 @@ func TestDefer(t *testing.T) {
 	panic("err")
 	// fmt.Println("End")
 }
+
+/*
+来自蔡超老师的<<Go小测试: 你真了解defer>>
+原文链接:https://mp.weixin.qq.com/s/yfH0CBnUBmH0oxfC2evKBA
+*/
+func GetFn() func() {
+	fmt.Println("outside")
+	return func() {
+		fmt.Println("Inside")
+	}
+}
+
+func TestDeferWp(t *testing.T) {
+	defer GetFn()()
+	fmt.Println("Here")
+}
