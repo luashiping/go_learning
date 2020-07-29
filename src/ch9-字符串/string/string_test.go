@@ -16,7 +16,7 @@ func TestString(t *testing.T) {
 	t.Log(len(s)) // 是byte数
 
 	s = "中"
-	t.Log(len(s))
+	t.Log(len(s)) // 是byte数
 	// t.Logf("%x", s[0])
 	// t.Logf("%x", s[1])
 	// t.Logf("%x", s[2])
@@ -28,7 +28,9 @@ func TestString(t *testing.T) {
 
 func TestStringToRune(t *testing.T) {
 	s := "中华人名共和国"
-	for _, c := range s {
+	b := []rune(s)
+	t.Logf("%x", b[0])
+	for _, c := range s { // range和字符串配合，迭代输出的是rune而不是byte
 		t.Logf("%[1]c %[1]x", c)
 	}
 }
