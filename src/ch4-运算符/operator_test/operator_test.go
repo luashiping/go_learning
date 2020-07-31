@@ -1,6 +1,9 @@
 package operator_test
 
-import "testing"
+import (
+	"strconv"
+	"testing"
+)
 
 // const
 
@@ -14,4 +17,20 @@ func TestCompareArray(t *testing.T) {
 	t.Log(a == b)
 	// t.Log(a == c)
 	t.Log(a == d)
+}
+
+func TestBitwiseAndOperator(t *testing.T) {
+	var a int64 = 14
+	// var b int64 = 3
+	v1 := strconv.FormatInt(a, 2)
+	t.Log(v1)
+
+	// 按位与: 两个相应的二进位都为1,该位的结果值才为1,否则为0
+	v := a & 1 // 按位与判断奇偶数
+	if v == 0 {
+		t.Log("a is even number")
+	} else {
+		t.Log("a is odd number")
+	}
+	t.Log(v)
 }
