@@ -2,3 +2,5 @@
 *.test
 pkg/
 .DS_Store
+.vscode/*
+bin/
