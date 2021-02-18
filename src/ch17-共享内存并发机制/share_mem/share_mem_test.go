@@ -10,6 +10,7 @@ func TestCounter(t *testing.T) {
 	counter := 0
 	for i := 0; i < 5000; i++ {
 		go func() {
+			// counter在不同的协程里去做自增，导致并发竞争条件，传统意义上来说就是非线程安全
 			counter++
 		}()
 	}
