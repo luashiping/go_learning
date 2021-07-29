@@ -1,6 +1,7 @@
 package share_mem
 
 import (
+	"fmt"
 	"sync"
 	"testing"
 	"time"
@@ -53,4 +54,24 @@ func TestCounterWaitGroup(t *testing.T) {
 	}
 	wg.Wait()
 	t.Logf("counter = %d", counter)
+}
+
+func TestSummation(t *testing.T) {
+	// 声明一个互斥锁mutex
+	var mutex sync.Mutex
+
+	var wg sync.WaitGroup
+	var sum int
+	for i := 0; i < 100; i++ {
+		wg.Add(1)
+		go func(a int) {
+			defer mutex.Unlock()
+			mutex.Lock()
+			// sum += a被加锁保护
+			sum += a
+			wg.Done()
+		}(12)
+	}
+	wg.Wait()
+	fmt.Println("和为:", sum)
 }
