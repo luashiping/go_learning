@@ -1,6 +1,9 @@
 package string_test
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestString(t *testing.T) {
 	var s string
@@ -33,4 +36,21 @@ func TestStringToRune(t *testing.T) {
 	for _, c := range s { // range和字符串配合，迭代输出的是rune而不是byte
 		t.Logf("%[1]c %[1]x", c)
 	}
+}
+
+func TestRawstring(t *testing.T) {
+	// 通过一对反引号原生支持构造“所见即所得”的原始字符串，并且原始字符串中的任意转义字符都不会起到转义作用
+	var s string = `         ,_---~~~~~----._
+_,,_,*^____      _____*g*\"*,--,
+/ __/ /'     ^.  /      \ ^@q   f
+[  @f | @))    |  | @))   l  0 _/
+\/   \~____ / __ \_____/     \
+|           _l__l_           I
+}          [______]           I
+]            | | |            |
+]             ~ ~             |
+|                            |
+ |                           |`
+	fmt.Println(s)
+	// t.Log(s)
 }
