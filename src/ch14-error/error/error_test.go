@@ -76,3 +76,15 @@ func GetFibonacci2(str string) {
 	fmt.Println(list)
 
 }
+
+func TestErrot(t *testing.T) {
+	if err := ReturnError(); err != nil {
+		t.Log(err)
+	}
+	fmt.Printf("%s has add to /etc/ld.so.conf!\n", "dog")
+}
+
+func ReturnError() error {
+	i := "ok"
+	return fmt.Errorf("Your first demo error is %s!", i)
+}
